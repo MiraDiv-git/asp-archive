@@ -32,7 +32,7 @@
         <h2>Upstream</h2>
 
         <!-- v0.7 -->
-        <div class="version-card latest">
+        <div class="version-card">
             <details>
                 <summary>
                     <span class="version-name">v0.7</span>
@@ -46,24 +46,22 @@
                         <li>Level 6: Reworked the first part - now circles are not that annoying.</li>
                     </ul>
                     <h3>Download</h3>
-                    <a href="https://miradiv.itch.io/awesome-square-puzzle" class="download-btn">
-                        <i class="fa-brands fa-itch-io"></i>
-                        <span>Itch.io</span>
-                    </a>
-                    <!-- 
-                    <a href="https://github.com/MiraDiv-git/asp-archive/releases/download/0.7/ASP_070.exe" class="download-btn">
+                    <a href="https://github.com/MiraDiv-git/asp-archive/releases/download/0.7/ASP_070.exe"
+                        class="download-btn">
                         <i class="fa-brands fa-windows"></i>
                         <span>Windows</span>
                     </a>
-                    <a href="https://github.com/MiraDiv-git/asp-archive/releases/download/0.7/ASP_070.x86-64" class="download-btn">
+                    <a href="https://github.com/MiraDiv-git/asp-archive/releases/download/0.7/ASP_070.x86-64"
+                        class="download-btn">
                         <i class="fa-brands fa-linux"></i>
                         <span>Linux</span>
                     </a>
-                    <a href="https://github.com/MiraDiv-git/asp-archive/releases/download/0.7/ASP_070.apk" class="download-btn">
+                    <a href="https://github.com/MiraDiv-git/asp-archive/releases/download/0.7/ASP_070.apk"
+                        class="download-btn">
                         <i class="fa-brands fa-android"></i>
                         <span>Android</span>
-                    </a> 
-                    -->
+                    </a>
+
                 </div>
             </details>
         </div>
@@ -311,5 +309,23 @@
         <p class="copyright">© 2026 MiraDiv</p>
     </footer>
 </body>
+
+<!-- Latest version card logic -->
+<script>
+    const firstCard = document.querySelector('.version-card');
+
+    firstCard.classList.add('latest');
+    firstCard.querySelector('details').open = true;
+
+    const changelog = firstCard.querySelector('.changelog');
+    changelog.querySelectorAll('a.download-btn').forEach(btn => btn.remove());
+
+    const itchBtn = document.createElement('a');
+    itchBtn.href = 'https://miradiv.itch.io/awesome-square-puzzle';
+    itchBtn.className = 'download-btn';
+    itchBtn.innerHTML = `<i class="fa-brands fa-itch-io"></i><span>Itch.io</span>`;
+
+    changelog.appendChild(itchBtn);
+</script>
 
 </html>
