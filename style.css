@@ -52,6 +52,10 @@ body {
     transition: border-color 0.2s;
 }
 
+.version-card.latest {
+    background: #2a322c;
+}
+
 .version-card:hover {
     border-color: #555;
 }
