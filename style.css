@@ -132,7 +132,7 @@ body {
 footer {
     width: 100%;
     max-width: 700px;
-    margin-top: auto;          /* прижимает футер к низу, если контента мало */
+    margin-top: auto;
     padding: 40px 20px 20px 20px;
     text-align: center;
     color: #666;
